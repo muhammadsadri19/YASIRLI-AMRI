@@ -62,15 +62,18 @@ if (!isset($_SESSION["login"])){
             <li><a class="nav-link scrollto" href="#konsultasi">KONSULTASI</a></li>
             <li><a class="nav-link scrollto" href="#team">TEAM</a></li>
             <li><a class="nav-link scrollto" href="profile.php">PROFIL</a></li>
+            <li class="dropdown"><a href="#"><span>sadri@gmail.com</span> <i class="bi bi-chevron-down"></i></a>
+            <ul>
+              <li><a href="#">Ganti Password</a></li>
+              <li><a href="#">log Out</a></li>
+              </li>
+            </ul>
+          </li>
           </ul>
-          <i class="bi bi-list mobile-nav-toggle"></i>
         </nav>
         <!-- .navbar -->
       
-        <a href="#" class="get-started-btn scrollto"><?php echo $_SESSION['user']?></a>
-        <a href="changepassword.php">Ganti password?</a>
-        <a href="logout.php" role="button" 
-	onclick="return confirm('yakin akan logout ?')">Logout</a>
+    
       </div>
     </header>
     <!-- End Header -->
@@ -270,23 +273,54 @@ if (!isset($_SESSION["login"])){
           </div>
         </div>
       </div>
-      
     </section>
-    <footer id="footer">
-      <div class="footer-newsletter">
-        <div class="container">
-          <div class="row">
-            <div class="col-lg-6">
-              <h4>Our Company</h4>
-              <p>Yuk support perusahaan kami</p>
-            </div>
-            <div class="col-lg-6">
-              <form action="" method="post"><input type="email" name="email" /><input type="submit" value="Kirim" /></form>
-            </div>
-          </div>
-        </div>
-      </div>
 
+    <!-- ======= Feedback Section ======= -->
+  <section id="contact" class="contact">
+      <div class="container">
+
+        <div class="section-title" data-aos="zoom-out">
+          <h2>Feedback</h2>
+          <p>Our Developer</p>
+        </div>
+
+        <div class="row mt-5">
+
+          <div class="col-lg-8 mt-5 mt-lg-0" data-aos="fade-left">
+
+            <form action="forms/contact.php" method="post" role="form" class="php-email-form">
+              <div class="row">
+                <div class="col-md-6 form-group">
+                  <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>
+                </div>
+                <div class="col-md-6 form-group mt-3 mt-md-0">
+                  <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" required>
+                </div>
+              </div>
+              <div class="form-group mt-3">
+                <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" required>
+              </div>
+              <div class="form-group mt-3">
+                <textarea class="form-control" name="message" rows="5" placeholder="Message" required></textarea>
+              </div>
+              <div class="my-3">
+                <div class="loading">Loading</div>
+                <div class="error-message"></div>
+                <div class="sent-message">Your message has been sent. Thank you!</div>
+              </div>
+              <div class="text-center"><button type="submit">Send Message</button></div>
+            </form>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section><!-- End Contact Section -->
+
+
+    <footer id="footer">
+    
       <div class="container">
         <div class="copyright">
           &copy; Copyright <strong><span>Yasirli Amri</span></strong
